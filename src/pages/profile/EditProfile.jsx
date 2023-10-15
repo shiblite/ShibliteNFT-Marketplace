@@ -8,7 +8,11 @@ import { Polybase } from "@polybase/client";
 import { ethers, Wallet } from "ethers";
 
 const EditProfile = ({ signer_address, getUserData, updateData, polybase }) => {
-  const storage = new ThirdwebStorage();
+  const storage = new ThirdwebStorage("bsc", {
+    clientId: "927a9cfa9200d24aa49f809579e6d3a6",
+    secretKey:
+      "X23xf6MkiduQN8zLZ17g53ED9m37t1ijSXs0tSHCNLe_g-XamRUbslpnCylF_OHR8Rjqrs3f9DSgbupFlTvGgQ",
+  });
   const [coverImg_preview, set_coverImg_preview] = useState("");
   const [profImg_preview, set_profImg_preview] = useState("");
   const [loading, set_loading] = useState(true);

@@ -52,7 +52,11 @@ const CreateAINFT = ({
     properties: [{ type: "", value: "" }],
   });
 
-  const storage = new ThirdwebStorage();
+  const storage = new ThirdwebStorage("bsc", {
+    clientId: "927a9cfa9200d24aa49f809579e6d3a6",
+    secretKey:
+      "X23xf6MkiduQN8zLZ17g53ED9m37t1ijSXs0tSHCNLe_g-XamRUbslpnCylF_OHR8Rjqrs3f9DSgbupFlTvGgQ",
+  });
   const formData = new FormData();
 
   const handleChange = (e) => {
