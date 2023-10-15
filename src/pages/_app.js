@@ -88,6 +88,7 @@ export default function App({ Component, pageProps }) {
     const db = await polybase();
     // del_nft();
     // delete_user();
+    delete_collection();
     // create_Marketplace_user();
     if (window?.ethereum) {
       const provider = new ethers.providers.Web3Provider(
@@ -205,7 +206,7 @@ export default function App({ Component, pageProps }) {
     const db = await polybase();
     const res = await db
       .collection("Collection")
-      .record("0x0D73e15690faCBccc0769436a705595E587B8D65")
+      .record("0x488cf7194C5909BC5a26469b321a21aE704E5A2A")
       .call("del");
   };
 
