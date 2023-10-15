@@ -146,7 +146,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="relative">
                         <Link href="/nft/0x4065213d6d042FAdac17bffBeb13Bb0854a2E16d/0">
                           <img
-                            src="https://gateway.ipfscdn.io/ipfs/Qmc6WoM29v824AebK4YpiaFvkhTQpLTJDxTu51jY6pb7WV/671.gif"
+                            src="https://ipfs.io/ipfs/Qmc6WoM29v824AebK4YpiaFvkhTQpLTJDxTu51jY6pb7WV/671.gif"
                             alt="item 1"
                             className="w-full object-cover"
                             height="437"
@@ -161,7 +161,7 @@ export default function Home({ all_collections, nfts, artists }) {
                             className="shrink-0"
                           >
                             <img
-                              src="https://gateway.ipfscdn.io/ipfs/QmeQXBTNbR1MaxpwLtW3QE9D9rw4ZazhsEhQoVToLPcUiW/683.gif"
+                              src="https://ipfs.io/ipfs/QmeQXBTNbR1MaxpwLtW3QE9D9rw4ZazhsEhQoVToLPcUiW/683.gif"
                               alt="avatar"
                               className="mr-4 h-10 w-10 rounded-full"
                               height={100}
@@ -193,7 +193,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="relative">
                         <Link href="/nft/0xf6f2d216Bf1A2d556D10AD106f97F54bD189ba95/2">
                           <img
-                            src="https://gateway.ipfscdn.io/ipfs/QmfQV4yNAPdVPi8M5ZTxpTS8y4TrejQs4TLDVoq4t29Htr/details%20(1).jpeg"
+                            src="https://ipfs.io/ipfs/QmfQV4yNAPdVPi8M5ZTxpTS8y4TrejQs4TLDVoq4t29Htr/details%20(1).jpeg"
                             alt="item 1"
                             height="437"
                             width="406"
@@ -208,7 +208,7 @@ export default function Home({ all_collections, nfts, artists }) {
                             className="shrink-0"
                           >
                             <img
-                              src="https://gateway.ipfscdn.io/ipfs/QmTd5SFv6rAEEJSaDEvfd3YjAbRaj9N2AaLceX3Y2ECvXJ/cd7ada2dd9f2c930d433e0c27c891a2bb88eea51.jpeg"
+                              src="https://ipfs.io/ipfs/QmTd5SFv6rAEEJSaDEvfd3YjAbRaj9N2AaLceX3Y2ECvXJ/cd7ada2dd9f2c930d433e0c27c891a2bb88eea51.jpeg"
                               alt="avatar"
                               className="mr-4 h-10 w-10 rounded-full"
                               height={100}
@@ -239,7 +239,7 @@ export default function Home({ all_collections, nfts, artists }) {
                         <div className="relative">
                           <Link href="/nft/0x483A767912818E7A3De29f95bc0d51b30070Bf02/0">
                             <img
-                              src="https://gateway.ipfscdn.io/ipfs/QmaEwNaNLxwCzN6kmuZZTF9Ltu8dMUj8AXRf4kaVTELThe/f1.png"
+                              src="https://ipfs.io/ipfs/QmaEwNaNLxwCzN6kmuZZTF9Ltu8dMUj8AXRf4kaVTELThe/f1.png"
                               alt="item 1"
                               className="w-full object-cover"
                               height="300"
@@ -254,7 +254,7 @@ export default function Home({ all_collections, nfts, artists }) {
                               className="shrink-0"
                             >
                               <img
-                                src="https://gateway.ipfscdn.io/ipfs/QmbGiScF3zL8KLxCApp6DFbSmN4WJT2cQoKgav1aT9Xfoa/firat.jpg"
+                                src="https://ipfs.io/ipfs/QmbGiScF3zL8KLxCApp6DFbSmN4WJT2cQoKgav1aT9Xfoa/firat.jpg"
                                 alt="avatar"
                                 className="mr-4 h-10 w-10 rounded-full"
                                 height={100}
@@ -306,7 +306,7 @@ export default function Home({ all_collections, nfts, artists }) {
                   <NftCard
                     ImageSrc={e.ipfsData.image?.replace(
                       /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                      "https://gateway.ipfscdn.io/ipfs/"
+                      "https://ipfs.io/ipfs/"
                     )}
                     Name={e.ipfsData.name}
                     Description={e.ipfsData.description}

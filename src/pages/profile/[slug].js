@@ -38,8 +38,7 @@ const Profile = ({
       name: "fDAIx",
       symbol: "fDAIx",
       address: "0xf2d68898557ccb2cf4c10c3ef2b034b2a69dad00",
-      icon:
-        "https://raw.githubusercontent.com/superfluid-finance/assets/master/public//tokens/dai/icon.svg",
+      icon: "https://raw.githubusercontent.com/superfluid-finance/assets/master/public//tokens/dai/icon.svg",
     },
   ];
   const [FDAIXBALANCE, setFDAIXBALANCE] = useState("0.00");
@@ -613,7 +612,7 @@ const Profile = ({
           src={
             user_data?.coverImage?.replace(
               /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-              "https://gateway.ipfscdn.io/ipfs/"
+              "https://ipfs.io/ipfs/"
             ) || testNFT
           }
           alt="banner"
@@ -631,7 +630,7 @@ const Profile = ({
               src={
                 user_data?.profileImage?.replace(
                   /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                  "https://gateway.ipfscdn.io/ipfs/"
+                  "https://ipfs.io/ipfs/"
                 ) || testNFT
               }
               alt="collection avatar"
@@ -985,8 +984,9 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${myWalletActive &&
-                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${
+                myWalletActive && "active relative"
+              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="wallet-tab"
               data-bs-toggle="tab"
               data-bs-target="#wallet"
@@ -1020,8 +1020,9 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${myNFTsActive &&
-                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${
+                myNFTsActive && "active relative"
+              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="created-tab"
               data-bs-toggle="tab"
               data-bs-target="#created"
@@ -1056,9 +1057,9 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${!myNFTsActive &&
-                !myWalletActive &&
-                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${
+                !myNFTsActive && !myWalletActive && "active relative"
+              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="collections-tab"
               data-bs-toggle="tab"
               data-bs-target="#collections"
@@ -1110,7 +1111,7 @@ const Profile = ({
                             p?.image
                               ? p?.image?.replace(
                                   /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                  "https://gateway.ipfscdn.io/ipfs/"
+                                  "https://ipfs.io/ipfs/"
                                 )
                               : "/test.jpg"
                           }
@@ -1204,7 +1205,7 @@ const Profile = ({
                           e.ipfsData.image
                             ? e.ipfsData.image?.replace(
                                 /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                "https://gateway.ipfscdn.io/ipfs/"
+                                "https://ipfs.io/ipfs/"
                               )
                             : "/test.jpg"
                         }

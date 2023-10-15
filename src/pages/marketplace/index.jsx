@@ -58,8 +58,9 @@ const Marketplace = ({
                 <li className="my-1 mr-2.5" onClick={() => setPropShow(true)}>
                   <a
                     href="#"
-                    className={`${propShow &&
-                      "border-transparent bg-accent text-white"} group flex h-9 items-center rounded-lg border border-jacarta-100 bg-white px-4 font-display text-sm font-semibold text-jacarta-500 transition-colors `}
+                    className={`${
+                      propShow && "border-transparent bg-accent text-white"
+                    } group flex h-9 items-center rounded-lg border border-jacarta-100 bg-white px-4 font-display text-sm font-semibold text-jacarta-500 transition-colors `}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +78,9 @@ const Marketplace = ({
                 <li className="my-1 mr-2.5" onClick={() => setPropShow(false)}>
                   <a
                     href="#"
-                    className={`${!propShow &&
-                      "border-transparent bg-accent text-white"} group flex h-9 items-center rounded-lg border border-jacarta-100 bg-white px-4 font-display text-sm font-semibold text-jacarta-500 transition-colors `}
+                    className={`${
+                      !propShow && "border-transparent bg-accent text-white"
+                    } group flex h-9 items-center rounded-lg border border-jacarta-100 bg-white px-4 font-display text-sm font-semibold text-jacarta-500 transition-colors `}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +108,7 @@ const Marketplace = ({
                           e.ipfsData.image
                             ? e.ipfsData.image?.replace(
                                 /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                "https://gateway.ipfscdn.io/ipfs/"
+                                "https://ipfs.io/ipfs/"
                               )
                             : "/test.jpg"
                         }
@@ -130,7 +132,7 @@ const Marketplace = ({
                           e.ipfsData.image
                             ? e.ipfsData.image?.replace(
                                 /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                "https://gateway.ipfscdn.io/ipfs/"
+                                "https://ipfs.io/ipfs/"
                               )
                             : "/test.jpg"
                         }

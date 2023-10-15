@@ -99,7 +99,7 @@ const NFTPage = ({
                 <Image
                   src={nft?.ipfsData?.image?.replace(
                     /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                    "https://gateway.ipfscdn.io/ipfs/"
+                    "https://ipfs.io/ipfs/"
                   )}
                   width={100}
                   height={100}
@@ -178,7 +178,7 @@ const NFTPage = ({
                             nft?.ownerImage
                               ? nft?.ownerimage?.replace(
                                   /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                  "https://gateway.ipfscdn.io/ipfs/"
+                                  "https://ipfs.io/ipfs/"
                                 )
                               : testNFT
                           }
@@ -468,16 +468,17 @@ const NFTPage = ({
                 )}
 
                 {/* <!-- not listed --> */}
-                {nft?.nft_owner !== signer_address && nft?.isListed == false && (
-                  <div className="rounded-2lg  border-jacarta-100 bg-white p-8 dark:border-jacarta-600 dark:bg-jacarta-700">
-                    <button
-                      type="button"
-                      className="inline-block w-full rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-                    >
-                      Not Listed
-                    </button>
-                  </div>
-                )}
+                {nft?.nft_owner !== signer_address &&
+                  nft?.isListed == false && (
+                    <div className="rounded-2lg  border-jacarta-100 bg-white p-8 dark:border-jacarta-600 dark:bg-jacarta-700">
+                      <button
+                        type="button"
+                        className="inline-block w-full rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+                      >
+                        Not Listed
+                      </button>
+                    </div>
+                  )}
 
                 {/* -------------------------- all action buttons end ------------------------  */}
               </div>
@@ -495,8 +496,9 @@ const NFTPage = ({
                     onClick={() => setPropShow(true)}
                   >
                     <button
-                      className={`nav-link ${propShow &&
-                        "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+                      className={`nav-link ${
+                        propShow && "active relative"
+                      } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
                       id="properties-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#properties"
@@ -528,8 +530,9 @@ const NFTPage = ({
                     onClick={() => setPropShow(false)}
                   >
                     <button
-                      className={`nav-link ${!propShow &&
-                        "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+                      className={`nav-link ${
+                        !propShow && "active relative"
+                      } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
                       id="details-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#details"

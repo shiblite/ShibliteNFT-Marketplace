@@ -211,7 +211,7 @@ const CreateAINFT = ({
                               predictionOutput &&
                               predictionOutput?.replace(
                                 /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                "https://gateway.ipfscdn.io/ipfs/"
+                                "https://ipfs.io/ipfs/"
                               )
                             }
                             alt="predictionOutput"

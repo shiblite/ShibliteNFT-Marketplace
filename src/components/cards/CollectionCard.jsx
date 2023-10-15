@@ -26,7 +26,7 @@ const CollectionCard = ({
           <Image
             src={Cover?.replace(
               /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-              "https://gateway.ipfscdn.io/ipfs/"
+              "https://ipfs.io/ipfs/"
             )}
             alt="Cover Image"
             className="h-full w-[100%] rounded-[0.625rem] object-cover"
@@ -39,7 +39,7 @@ const CollectionCard = ({
           <Image
             src={Logo?.replace(
               /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-              "https://gateway.ipfscdn.io/ipfs/"
+              "https://ipfs.io/ipfs/"
             )}
             alt="Logo"
             className="h-[75px] w-[75px] rounded-[100%] border b-4 border-black shadow-lg"

@@ -24,7 +24,7 @@ const Slider = ({ nfts }) => {
                       e.ipfsData.image
                         ? e.ipfsData.image?.replace(
                             /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                            "https://gateway.ipfscdn.io/ipfs/"
+                            "https://ipfs.io/ipfs/"
                           )
                         : "/test.jpg"
                     }

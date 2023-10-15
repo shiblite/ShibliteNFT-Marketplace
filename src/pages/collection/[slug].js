@@ -177,7 +177,7 @@ const Collection = ({
             <Image
               src={collection.coverImage?.replace(
                 /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                "https://gateway.ipfscdn.io/ipfs/"
+                "https://ipfs.io/ipfs/"
               )}
               width={100}
               height={100}
@@ -193,7 +193,7 @@ const Collection = ({
                 <Image
                   src={collection.logo?.replace(
                     /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                    "https://gateway.ipfscdn.io/ipfs/"
+                    "https://ipfs.io/ipfs/"
                   )}
                   width={100}
                   height={100}
@@ -696,7 +696,7 @@ const Collection = ({
                             e.ipfsData.image
                               ? e.ipfsData.image?.replace(
                                   /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-                                  "https://gateway.ipfscdn.io/ipfs/"
+                                  "https://ipfs.io/ipfs/"
                                 )
                               : "/test.jpg"
                           }
