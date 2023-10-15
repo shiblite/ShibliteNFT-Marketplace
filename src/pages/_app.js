@@ -1006,8 +1006,8 @@ export default function App({ Component, pageProps }) {
         .collection("User")
         .record(res.data.owner.id)
         .get();
-      obj.nft_properties = res.data.properties
-        ? JSON.parse(res.data.properties)
+      obj.nft_properties = res.data.attributes
+        ? JSON.parse(res.data.attributes)
         : [];
       // COLLECTION INFO
       obj.collectionLogo = collectionInfo.data.logo;
