@@ -69,7 +69,11 @@ collection NFT {
     
     this.isListed = false;
     this.listingPrice = "0";
-}
+    }
+
+    del(){
+        selfdestruct();
+    } 
 
   listNFT(price: string, chainId: string) {
 
@@ -134,6 +138,10 @@ collection Collection {
         this.chain_image = chain_image;
         this.isCollectionVerified = isCollectionVerified;
     }
+
+    del(){
+        selfdestruct();
+    }
 }
 
 @public
@@ -185,5 +193,9 @@ collection User {
         this.coverImage = coverImage;
         this.socials = socials;
         this.isArtist = isArtist;
+    }
+
+    del(){
+        selfdestruct();
     }
 }

@@ -208,6 +208,7 @@ export default function App({ Component, pageProps }) {
       .collection("Collection")
       .record("0x488cf7194C5909BC5a26469b321a21aE704E5A2A")
       .call("del");
+    console.log(res, "delete_collection");
   };
 
   // create marketplace user polybase chain_method
