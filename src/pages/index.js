@@ -146,7 +146,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="relative">
                         <Link href="/nft/0x4065213d6d042FAdac17bffBeb13Bb0854a2E16d/0">
                           <img
-                            src="https://ipfs.io/ipfs/Qmc6WoM29v824AebK4YpiaFvkhTQpLTJDxTu51jY6pb7WV/671.gif"
+                            src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/0019e7baef9a4f984a202993ccc2e6d9.jpg"
                             alt="item 1"
                             className="w-full object-cover"
                             height="437"
@@ -161,7 +161,7 @@ export default function Home({ all_collections, nfts, artists }) {
                             className="shrink-0"
                           >
                             <img
-                              src="https://ipfs.io/ipfs/QmeQXBTNbR1MaxpwLtW3QE9D9rw4ZazhsEhQoVToLPcUiW/683.gif"
+                              src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/00311e1f5906d31ef4819ae37992b691.jpg"
                               alt="avatar"
                               className="mr-4 h-10 w-10 rounded-full"
                               height={100}
@@ -193,7 +193,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="relative">
                         <Link href="/nft/0xf6f2d216Bf1A2d556D10AD106f97F54bD189ba95/2">
                           <img
-                            src="https://ipfs.io/ipfs/QmfQV4yNAPdVPi8M5ZTxpTS8y4TrejQs4TLDVoq4t29Htr/details%20(1).jpeg"
+                            src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/003f927f1f9d0a7d2df635c98b95dd3c.jpg"
                             alt="item 1"
                             height="437"
                             width="406"
