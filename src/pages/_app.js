@@ -118,106 +118,107 @@ export default function App({ Component, pageProps }) {
       const { chainId } = await provider.getNetwork();
       set_current_chainId(chainId);
 
-      if (chainId == 1442) {
-        // polygon zkevm
-        setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
-        setMarketplaceAddress("0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b");
-        setCollectionFactoryAddress(
-          "0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c"
-        );
-        setChainImg(polygonLogo);
-        setSymbol("ETH");
-        setBlockchain("PolygonZKEVM");
-        setBlockURL("https://testnet-zkevm.polygonscan.com/");
-      } else if (chainId == 3141) {
-        // filecoin
-        setCollectionAddress("0xdC4643fc6A81247c75f5f434f9256A1de4C9aacb");
-        setMarketplaceAddress("0x50a5dB0124ebA53A5bb99f11730EB942De8D8338");
-        setCollectionFactoryAddress(
-          "0x5c2A32866de13900C9f07fDe8c9E4668EC8B6396"
-        );
-        setChainImg(filecoinLogo);
-        setSymbol("TFIL");
-        setBlockchain("Filecoin");
-        setBlockURL("https://hyperspace.filfox.info/en/");
-      } else if (chainId == 5001) {
-        // mantle
-        setCollectionAddress("0x835BC919ED6380b330C5BC1f9459dA11ce4911C4");
-        setMarketplaceAddress("0x2a21d13776F7317b93ba74Ac7639ad39F4e2db8E");
-        setCollectionFactoryAddress(
-          "0x208110D0DCea9E83bdecC6C9E088af6090dE1Ef0"
-        );
-        setChainImg(mantleLogo);
-        setSymbol("BIT");
-        setBlockchain("Mantle");
-        setBlockURL("https://explorer.testnet.mantle.xyz/");
-      } else if (chainId == 534353) {
-        // scroll
-        setCollectionAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
-        setMarketplaceAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
-        setCollectionFactoryAddress(
-          "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
-        );
-        setChainImg(scrollLogo);
-        setSymbol("ETH");
-        setBlockchain("Scroll");
-        setBlockURL("https://blockscout.scroll.io/");
-      } else if (chainId == 167004) {
-        // taiko
-        setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
-        setMarketplaceAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
-        setCollectionFactoryAddress(
-          "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
-        );
-        setChainImg(TaikoLogo);
-        setSymbol("ETH");
-        setBlockchain("Taiko");
-        setBlockURL("https://explorer.a2.taiko.xyz");
-      } else if (chainId == 10200) {
-        // gnosis
-        setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
-        setMarketplaceAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
-        setCollectionFactoryAddress(
-          "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
-        );
-        setChainImg(gnosisLogo);
-        setSymbol("XDAI");
-        setBlockchain("Gnosis");
-        setBlockURL("https://blockscout.com/gnosis/chiado/");
-      } else if (chainId == 5) {
-        // eth goerli
-        setCollectionAddress("0x488cf7194C5909BC5a26469b321a21aE704E5A2A");
-        setMarketplaceAddress("0x93544483B57295abF1756E95D6a296b81cD7541C");
-        setCollectionFactoryAddress(
-          "0xCe8fFb22DC67c11d594e0feFB1f3e2D8D9d23Bf4"
-        );
-        setChainImg(goerliLogo);
-        setSymbol("ETH");
-        setBlockchain("Goerli");
-        setBlockURL("https://goerli.etherscan.io/");
-      } else if (chainId == 80001) {
-        // matic
-        setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
-        setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
-        setCollectionFactoryAddress(
-          "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
-        );
-        setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
-        setChainImg(polygonLogo);
-        setSymbol("MATIC");
-        setBlockchain("Polygon Mumbai");
-        setBlockURL("https://mumbai.polygonscan.com/");
-      } else if (chainId == 1) {
-        // matic
-        setCollectionAddress("");
-        setMarketplaceAddress("");
-        setCollectionFactoryAddress("");
-        setStakingContract("");
-        setChainImg(goerliLogo);
-        setSymbol("ETH");
-        setBlockchain("Ethereum");
-        setBlockURL("https://etherscan.io/");
-      } else if (chainId == 56) {
+      // if (chainId == 1442) {
+      //   // polygon zkevm
+      //   setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
+      //   setMarketplaceAddress("0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b");
+      //   setCollectionFactoryAddress(
+      //     "0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c"
+      //   );
+      //   setChainImg(polygonLogo);
+      //   setSymbol("ETH");
+      //   setBlockchain("PolygonZKEVM");
+      //   setBlockURL("https://testnet-zkevm.polygonscan.com/");
+      // } else if (chainId == 3141) {
+      //   // filecoin
+      //   setCollectionAddress("0xdC4643fc6A81247c75f5f434f9256A1de4C9aacb");
+      //   setMarketplaceAddress("0x50a5dB0124ebA53A5bb99f11730EB942De8D8338");
+      //   setCollectionFactoryAddress(
+      //     "0x5c2A32866de13900C9f07fDe8c9E4668EC8B6396"
+      //   );
+      //   setChainImg(filecoinLogo);
+      //   setSymbol("TFIL");
+      //   setBlockchain("Filecoin");
+      //   setBlockURL("https://hyperspace.filfox.info/en/");
+      // } else if (chainId == 5001) {
+      //   // mantle
+      //   setCollectionAddress("0x835BC919ED6380b330C5BC1f9459dA11ce4911C4");
+      //   setMarketplaceAddress("0x2a21d13776F7317b93ba74Ac7639ad39F4e2db8E");
+      //   setCollectionFactoryAddress(
+      //     "0x208110D0DCea9E83bdecC6C9E088af6090dE1Ef0"
+      //   );
+      //   setChainImg(mantleLogo);
+      //   setSymbol("BIT");
+      //   setBlockchain("Mantle");
+      //   setBlockURL("https://explorer.testnet.mantle.xyz/");
+      // } else if (chainId == 534353) {
+      //   // scroll
+      //   setCollectionAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
+      //   setMarketplaceAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
+      //   setCollectionFactoryAddress(
+      //     "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
+      //   );
+      //   setChainImg(scrollLogo);
+      //   setSymbol("ETH");
+      //   setBlockchain("Scroll");
+      //   setBlockURL("https://blockscout.scroll.io/");
+      // } else if (chainId == 167004) {
+      //   // taiko
+      //   setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
+      //   setMarketplaceAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
+      //   setCollectionFactoryAddress(
+      //     "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
+      //   );
+      //   setChainImg(TaikoLogo);
+      //   setSymbol("ETH");
+      //   setBlockchain("Taiko");
+      //   setBlockURL("https://explorer.a2.taiko.xyz");
+      // } else if (chainId == 10200) {
+      //   // gnosis
+      //   setCollectionAddress("0x0D73e15690faCBccc0769436a705595E587B8D65");
+      //   setMarketplaceAddress("0xb0d163F7e7Acb60a5eD5d5929278ffAE8082BF8c");
+      //   setCollectionFactoryAddress(
+      //     "0xC97537C89A7039bA0090Ec8220CD69Dd2fAAee7b"
+      //   );
+      //   setChainImg(gnosisLogo);
+      //   setSymbol("XDAI");
+      //   setBlockchain("Gnosis");
+      //   setBlockURL("https://blockscout.com/gnosis/chiado/");
+      // } else if (chainId == 5) {
+      //   // eth goerli
+      //   setCollectionAddress("0x488cf7194C5909BC5a26469b321a21aE704E5A2A");
+      //   setMarketplaceAddress("0x93544483B57295abF1756E95D6a296b81cD7541C");
+      //   setCollectionFactoryAddress(
+      //     "0xCe8fFb22DC67c11d594e0feFB1f3e2D8D9d23Bf4"
+      //   );
+      //   setChainImg(goerliLogo);
+      //   setSymbol("ETH");
+      //   setBlockchain("Goerli");
+      //   setBlockURL("https://goerli.etherscan.io/");
+      // } else if (chainId == 80001) {
+      //   // matic
+      //   setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
+      //   setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
+      //   setCollectionFactoryAddress(
+      //     "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
+      //   );
+      //   setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
+      //   setChainImg(polygonLogo);
+      //   setSymbol("MATIC");
+      //   setBlockchain("Polygon Mumbai");
+      //   setBlockURL("https://mumbai.polygonscan.com/");
+      // } else if (chainId == 1) {
+      //   // matic
+      //   setCollectionAddress("");
+      //   setMarketplaceAddress("");
+      //   setCollectionFactoryAddress("");
+      //   setStakingContract("");
+      //   setChainImg(goerliLogo);
+      //   setSymbol("ETH");
+      //   setBlockchain("Ethereum");
+      //   setBlockURL("https://etherscan.io/");
+      // } else 
+      if (chainId == 56) {
         // matic
         setCollectionAddress("0x870696c21EA3f46bb9Acf84F71973246E4EFa239");
         setMarketplaceAddress("0x17c309d1fd44463f5B94f95A33bcE3BaC383Ea68");
@@ -229,18 +230,18 @@ export default function App({ Component, pageProps }) {
         setSymbol("BNB");
         setBlockchain("BSC Mainnet");
         setBlockURL("https://bscscan.com/");
-      } else {
-        setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
-        setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
-        setCollectionFactoryAddress(
-          "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
-        );
-        setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
-        setChainImg(polygonLogo);
-        setSymbol("MATIC");
-        setBlockchain("PolygonMum");
-        setBlockURL("https://mumbai.polygonscan.com/");
-      }
+      // } else {
+      //   setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
+      //   setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
+      //   setCollectionFactoryAddress(
+      //     "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
+      //   );
+      //   setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
+      //   setChainImg(polygonLogo);
+      //   setSymbol("MATIC");
+      //   setBlockchain("PolygonMum");
+      //   setBlockURL("https://mumbai.polygonscan.com/");
+      // }
       // create_marketplace_acc();
       await setChainIdMain(chainId);
     } else {
