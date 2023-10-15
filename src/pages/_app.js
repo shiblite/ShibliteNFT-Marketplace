@@ -29,7 +29,8 @@ export default function App({ Component, pageProps }) {
 
   const storage = new ThirdwebStorage("bsc", {
     clientId: "927a9cfa9200d24aa49f809579e6d3a6",
-    secretKey: "X23xf6MkiduQN8zLZ17g53ED9m37t1ijSXs0tSHCNLe_g-XamRUbslpnCylF_OHR8Rjqrs3f9DSgbupFlTvGgQ",
+    secretKey:
+      "X23xf6MkiduQN8zLZ17g53ED9m37t1ijSXs0tSHCNLe_g-XamRUbslpnCylF_OHR8Rjqrs3f9DSgbupFlTvGgQ",
   });
   //SIGNER INFORMATION
   const [signer, setSigner] = useState();
@@ -121,7 +122,6 @@ export default function App({ Component, pageProps }) {
       const { chainId } = await provider.getNetwork();
       set_current_chainId(chainId);
 
-   
       if (chainId == 56) {
         // matic
         setCollectionAddress("0x870696c21EA3f46bb9Acf84F71973246E4EFa239");
@@ -134,7 +134,7 @@ export default function App({ Component, pageProps }) {
         setSymbol("BNB");
         setBlockchain("BSC Mainnet");
         setBlockURL("https://bscscan.com/");
- 
+      }
       // create_marketplace_acc();
       await setChainIdMain(chainId);
     } else {
@@ -197,10 +197,7 @@ export default function App({ Component, pageProps }) {
 
   const del_nft = async () => {
     const db = await polybase();
-    const res = await db
-      .collection("NFT")
-      .record("nftid")
-      .call("del");
+    const res = await db.collection("NFT").record("nftid").call("del");
   };
 
   // delete collection polybase chain_method
@@ -1463,10 +1460,7 @@ export default function App({ Component, pageProps }) {
   const getUserData = async (user_address) => {
     try {
       const db = await polybase();
-      const res = await db
-        .collection("User")
-        .record(user_address)
-        .get();
+      const res = await db.collection("User").record(user_address).get();
       const {
         bio,
         coverImage,
