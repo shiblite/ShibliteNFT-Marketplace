@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }) {
     const db = await polybase();
     // del_nft();
     // delete_user();
-    delete_collection();
+    // delete_collection();
     // create_Marketplace_user();
     if (window?.ethereum) {
       const provider = new ethers.providers.Web3Provider(
