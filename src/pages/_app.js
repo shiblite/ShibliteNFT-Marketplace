@@ -43,6 +43,7 @@ export default function App({ Component, pageProps }) {
   const [search_data] = useState(nfts);
   const [artists, set_artists] = useState([]);
   const [chainId, set_current_chainId] = useState();
+  const [marketplace_collection, setMarketplaceCollection] = useState();
 
   //COLLECTIONS INFORMATION
   const [all_collections, set_collections] = useState([]);
@@ -126,6 +127,7 @@ export default function App({ Component, pageProps }) {
       if (chainId == 56) {
         // matic
         setCollectionAddress("0x870696c21EA3f46bb9Acf84F71973246E4EFa239");
+        setMarketplaceCollection("0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793");
         setMarketplaceAddress("0x17c309d1fd44463f5B94f95A33bcE3BaC383Ea68");
         setCollectionFactoryAddress(
           "0x01c00C36C431017aF981D9C4B7DAc551c3310D9F"
@@ -173,6 +175,34 @@ export default function App({ Component, pageProps }) {
             .record("0x8ab7C842935F9C652Da3370E1ce9d592569a3fb9")?.collection
             .id,
           "Shiba Lite - Lite Guys",
+          "https://img.tofunft.com/v2/56/0x870696c21ea3f46bb9acf84f71973246e4efa239/25/720/static.jpg",
+          "https://cdn.tofunft.com/covers/6baoxm8yc1b084e.png/1440.png",
+          "Lite Guys",
+          "If you missed #ShibaInu you don't want to miss ShibaLite 💎 A community driven #Crypto which rewards holders & donates",
+          db
+            .collection("User")
+            .record("0x8ab7C842935F9C652Da3370E1ce9d592569a3fb9"),
+          "0x8ab7C842935F9C652Da3370E1ce9d592569a3fb9",
+          "chains/bsc.png",
+          true,
+        ]);
+    }
+
+    const checkUser1 = await db
+      .collection("Collection")
+      .where("id", "==", marketplace_collection)
+      .get();
+
+    if (checkUser1.data.length === 0) {
+      const res = await db
+        .collection("Collection")
+        .create([
+          marketplace_collection,
+          await db
+            .collection("User")
+            .record("0x8ab7C842935F9C652Da3370E1ce9d592569a3fb9")?.collection
+            .id,
+          "Shiba Lite - Marketplace Collection",
           "https://img.tofunft.com/v2/56/0x870696c21ea3f46bb9acf84f71973246e4efa239/25/720/static.jpg",
           "https://cdn.tofunft.com/covers/6baoxm8yc1b084e.png/1440.png",
           "Lite Guys",
@@ -1630,6 +1660,7 @@ export default function App({ Component, pageProps }) {
         request_verification_UMA={request_verification_UMA}
         uma_settle_request={uma_settle_request}
         txnHashCollection={txnHashCollection}
+        marketplace_collection={marketplace_collection}
       />
       <ToastContainer />
       <Footer />

@@ -16,6 +16,7 @@ const CreateAINFT = ({
   get_my_collections,
   signer,
   signer_address,
+  marketplace_collection,
 }) => {
   const randomAIText = [
     "highly detailed wide portrait young woman anime, by atey ghailan, by greg rutkowski, by greg tocchini, by james gilleard, by joe fenton, by kaethe butcher, gradient light blue, brown, blonde cream and white color scheme, grunge aesthetic, 8 k, optimistic",
@@ -48,7 +49,7 @@ const CreateAINFT = ({
     image: "",
     name: "",
     description: "",
-    collection: defaultCollectionAddress,
+    collection: marketplace_collection,
     properties: [{ type: "", value: "" }],
   });
 

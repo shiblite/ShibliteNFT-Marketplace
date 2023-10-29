@@ -11,6 +11,7 @@ const CreateNFT = ({
   signer,
   signer_address,
   polybase,
+  marketplace_collection,
 }) => {
   const router = useRouter();
   const [loading, set_loading] = useState(false);
@@ -23,7 +24,7 @@ const CreateNFT = ({
     image: "",
     name: "",
     description: "",
-    collection: defaultCollectionAddress,
+    collection: marketplace_collection,
     properties: [{ type: "", value: "" }],
   });
 
