@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const wallet = new Wallet(process.env.NEXT_PUBLIC_ACCOUNT_PRIVATE_KEY);
 
-  const storage = new ThirdwebStorage("bsc", {
+  const storage = new ThirdwebStorage({
     clientId: "927a9cfa9200d24aa49f809579e6d3a6",
     secretKey:
       "X23xf6MkiduQN8zLZ17g53ED9m37t1ijSXs0tSHCNLe_g-XamRUbslpnCylF_OHR8Rjqrs3f9DSgbupFlTvGgQ",
