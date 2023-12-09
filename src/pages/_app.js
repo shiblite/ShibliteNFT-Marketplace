@@ -900,7 +900,7 @@ export default function App({ Component, pageProps }) {
         chain_block = "https://mumbai.polygonscan.com/";
       }
 
-      // console.log(tokenURI, "tokenURI");
+      console.log(tokenURI, "tokenURI");
 
       await rarx.on("TokenCreated", async (ipfsURL, tokenId) => {
         // console.log({ ipfsURL, tokenId });
