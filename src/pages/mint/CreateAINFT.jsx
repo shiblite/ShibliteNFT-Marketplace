@@ -68,6 +68,7 @@ const CreateAINFT = ({
     const values = [...data.properties];
     values[index][e.target.name] = e.target.value;
     set_data({ ...data, properties: values });
+    console.log(data, "createai data");
   };
 
   const handle_add_field = () => {

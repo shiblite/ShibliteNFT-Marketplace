@@ -73,6 +73,7 @@ const CreateNFT = ({
   };
 
   useEffect(() => {
+    console.log(data, "createnft data");
     if (!signer) return;
     get_user_collections();
   }, [signer]);
