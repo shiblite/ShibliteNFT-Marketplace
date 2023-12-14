@@ -878,7 +878,7 @@ export default function App({ Component, pageProps }) {
     try {
       // console.log(_tokenURI);
       const tokenURI = await storage.upload(_tokenURI);
-      console.log(tokenURI, "tokenURI");
+      console.log(_tokenURI, "tokenURI");
       const rarx = rarx_collection(_tokenURI.collection, signer);
       const network = await provider.getNetwork();
 
