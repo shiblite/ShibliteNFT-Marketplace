@@ -218,9 +218,9 @@ const CreateNFT = ({
                   required
                 >
                   <option>Select Collection</option>
-                  {/* <option value={defaultCollectionAddress}>
+                  <option value={marketplace_collection}>
                     ShibLite Marketplace Collection
-                  </option> */}
+                  </option>
                   {user_collections?.map((e, index) => {
                     return (
                       <option key={index} value={e.collection_address}>

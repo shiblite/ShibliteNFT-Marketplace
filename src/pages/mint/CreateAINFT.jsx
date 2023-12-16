@@ -453,7 +453,7 @@ const CreateAINFT = ({
                       onClick={() => get_user_collections()}
                       className="dropdown my-1 cursor-pointer w-[100%]"
                     >
-                      <option value={defaultCollectionAddress}>
+                      <option value={marketplace_collection}>
                         ShibLite Marketplace Collection
                       </option>
                       {user_collections?.map((e, index) => {

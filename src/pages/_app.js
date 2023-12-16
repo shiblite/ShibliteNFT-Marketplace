@@ -125,7 +125,7 @@ export default function App({ Component, pageProps }) {
       set_current_chainId(chainId);
 
       if (chainId == 56) {
-        // matic
+        // bsc
         setCollectionAddress("0x870696c21EA3f46bb9Acf84F71973246E4EFa239");
         setMarketplaceCollection("0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793");
         setMarketplaceAddress("0x17c309d1fd44463f5B94f95A33bcE3BaC383Ea68");
