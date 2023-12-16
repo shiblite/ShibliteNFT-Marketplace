@@ -939,8 +939,8 @@ export default function App({ Component, pageProps }) {
             ipfsURL,
             "0",
           ]);
-        // console.log({ polybaseres: res });
-        // console.log("res", res);
+        console.log({ polybaseres: res });
+        console.log("res", res);
       });
 
       const txn = await rarx.createToken(tokenURI);
