@@ -918,28 +918,35 @@ export default function App({ Component, pageProps }) {
       await rarx.on("TokenCreated", async (ipfsURL, tokenId) => {
         // console.log({ ipfsURL, tokenId });
         const db = await polybase();
-        const res = await db
-          .collection("NFT")
-          .create([
-            `${_tokenURI?.collection}/${tokenId.toString()}`,
-            _tokenURI?.collection,
-            tokenId.toString(),
-            network.chainId.toString(),
-            tokenURI,
-            db.collection("User").record(signer_address),
-            db.collection("Collection").record(_tokenURI?.collection),
-            (properties[0].type = "" ? "" : JSON.stringify(properties)),
-            name,
-            ipfsURL,
-            description,
-            false,
-            signer_address,
-            chain_block,
-            chain_Image,
-            chain_symbol,
-            ipfsURL,
-            "0",
-          ]);
+        if (
+          name !== null &&
+          ipfsURL !== null &&
+          description !== null &&
+          properties !== null
+        ) {
+          const res = await db
+            .collection("NFT")
+            .create([
+              `${_tokenURI?.collection}/${tokenId.toString()}`,
+              _tokenURI?.collection,
+              tokenId.toString(),
+              network.chainId.toString(),
+              tokenURI,
+              db.collection("User").record(signer_address),
+              db.collection("Collection").record(_tokenURI?.collection),
+              (properties[0].type = "" ? "" : JSON.stringify(properties)),
+              name,
+              ipfsURL,
+              description,
+              false,
+              signer_address,
+              chain_block,
+              chain_Image,
+              chain_symbol,
+              ipfsURL,
+              "0",
+            ]);
+        }
         console.log({ polybaseres: res });
         console.log("res", res);
       });
