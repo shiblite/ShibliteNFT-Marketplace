@@ -927,9 +927,9 @@ export default function App({ Component, pageProps }) {
             tokenURI,
             db.collection("User").record(signer_address),
             db.collection("Collection").record(_tokenURI.collection),
-            _tokenURI.properties[0].type
-              ? JSON.stringify(_tokenURI.properties)
-              : "",
+            (_tokenURI.properties[0].type = ""
+              ? ""
+              : JSON.stringify(_tokenURI.properties)),
             _tokenURI.name,
             ipfsURL,
             _tokenURI.description,
