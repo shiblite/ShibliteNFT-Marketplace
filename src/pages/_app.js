@@ -890,6 +890,7 @@ export default function App({ Component, pageProps }) {
   const create_token = async (_tokenURI, signer) => {
     try {
       // console.log(_tokenURI);
+      const { name, properties, description } = _tokenURI;
       const tokenURI = await storage.upload(_tokenURI);
       console.log(_tokenURI, "tokenURI");
       const rarx = rarx_collection(_tokenURI.collection, signer);
@@ -920,19 +921,17 @@ export default function App({ Component, pageProps }) {
         const res = await db
           .collection("NFT")
           .create([
-            `${_tokenURI.collection}/${tokenId.toString()}`,
-            _tokenURI.collection,
+            `${_tokenURI?.collection}/${tokenId.toString()}`,
+            _tokenURI?.collection,
             tokenId.toString(),
             network.chainId.toString(),
             tokenURI,
             db.collection("User").record(signer_address),
-            db.collection("Collection").record(_tokenURI.collection),
-            (_tokenURI.properties[0].type = ""
-              ? ""
-              : JSON.stringify(_tokenURI.properties)),
-            _tokenURI.name,
+            db.collection("Collection").record(_tokenURI?.collection),
+            (properties[0].type = "" ? "" : JSON.stringify(properties)),
+            name,
             ipfsURL,
-            _tokenURI.description,
+            description,
             false,
             signer_address,
             chain_block,
