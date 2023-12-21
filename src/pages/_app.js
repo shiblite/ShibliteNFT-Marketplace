@@ -1500,6 +1500,7 @@ export default function App({ Component, pageProps }) {
   // polybase db connect
   const polybase = async () => {
     const db = new Polybase({
+      baseURL: "https://testnet.polybase.xyz/v0",
       defaultNamespace: process.env.NEXT_PUBLIC_POLYBASE_NAMESPACE,
       signer: async (data) => {
         return {
