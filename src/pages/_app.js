@@ -934,8 +934,11 @@ export default function App({ Component, pageProps }) {
                 tokenId.toString(),
                 network.chainId.toString(),
                 tokenURI,
-                await db.collection("User").record(signer_address),
-                await db.collection("Collection").record(_tokenURI?.collection),
+                await db.collection("User").record(signer_address).get(),
+                await db
+                  .collection("Collection")
+                  .record(_tokenURI?.collection)
+                  .get(),
                 (properties[0].type = "" ? "" : JSON.stringify(properties)),
                 name,
                 ipfsURL,
