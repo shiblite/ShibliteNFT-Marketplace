@@ -21,7 +21,7 @@
     "@nomiclabs/hardhat-ethers": "^2.0.0",
     "@nomiclabs/hardhat-etherscan": "^3.0.0",
     "@openzeppelin/contracts": "^4.8.1",
-    "@polybase/client": "^0.3.39",
+    "@polybase/client": "^0.6.6",
     "@pushprotocol/restapi": "^0.2.1",
     "@pushprotocol/socket": "^0.3.1",
     "@pushprotocol/uiweb": "^0.4.1",
