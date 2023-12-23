@@ -939,7 +939,7 @@ export default function App({ Component, pageProps }) {
                   .collection("Collection")
                   .record(_tokenURI?.collection)
                   .get(),
-                (properties[0].type = "" ? "" : JSON.stringify(properties)),
+                properties[0].type == "" ? "" : JSON.stringify(properties),
                 name,
                 ipfsURL,
                 description,
