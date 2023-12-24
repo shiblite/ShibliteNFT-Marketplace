@@ -31,6 +31,7 @@ const Profile = ({
   connectToWallet,
   polybase,
   symbol,
+  marketplace_collection,
 }) => {
   // superfluid config start
   const tokens = [
@@ -323,15 +324,15 @@ const Profile = ({
     try {
       set_loading(true);
       // const chainID = EvmChain.ETHEREUM;
-      const response = await Moralis.EvmApi.nft.getWalletNFTs({
+      const response = await Moralis.EvmApi.nft.getContractNFTs({
         chain: chainIdMain,
-        address: signer_address,
+        address: marketplace_collection,
       });
       setWalletNft(
         response?.jsonResponse?.result && response.jsonResponse.result
       );
       set_loading(false);
-      // console.log(response?.jsonResponse?.result, "response.nft");
+      console.log(response?.jsonResponse?.result, "response.nft");
     } catch (error) {
       console.log(error);
     }
