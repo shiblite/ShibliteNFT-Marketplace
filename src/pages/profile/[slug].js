@@ -550,28 +550,28 @@ const Profile = ({
     }
 
     const db = await polybase();
-    // const res = await db
-    //   .collection("NFT")
-    //   .create([
-    //     `${collection_address}/${id}`,
-    //     collection_address,
-    //     id,
-    //     chainIdMain?.toString(),
-    //     token_uri,
-    //     db.collection("User").record(signer_address),
-    //     db.collection("Collection").record(collection_address),
-    //     JSON.stringify(properties),
-    //     name,
-    //     image,
-    //     description,
-    //     false,
-    //     signer_address,
-    //     chain_block,
-    //     chain_Image,
-    //     chain_symbol,
-    //     token_uri,
-    //     "0",
-    //   ]);
+    const res = await db
+      .collection("NFT")
+      .create([
+        `${collection_address}/${id}`,
+        collection_address,
+        id,
+        chainIdMain?.toString(),
+        token_uri,
+        db.collection("User").record(signer_address),
+        db.collection("Collection").record(collection_address),
+        JSON.stringify(properties),
+        name,
+        image,
+        description,
+        false,
+        signer_address,
+        chain_block,
+        chain_Image,
+        chain_symbol,
+        token_uri,
+        "0",
+      ]);
     // router.reload();
   }
 
