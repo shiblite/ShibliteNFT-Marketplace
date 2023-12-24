@@ -38,7 +38,8 @@ const Profile = ({
       name: "fDAIx",
       symbol: "fDAIx",
       address: "0xf2d68898557ccb2cf4c10c3ef2b034b2a69dad00",
-      icon: "https://raw.githubusercontent.com/superfluid-finance/assets/master/public//tokens/dai/icon.svg",
+      icon:
+        "https://raw.githubusercontent.com/superfluid-finance/assets/master/public//tokens/dai/icon.svg",
     },
   ];
   const [FDAIXBALANCE, setFDAIXBALANCE] = useState("0.00");
@@ -500,21 +501,21 @@ const Profile = ({
         .create([owner, "", "", "", "", "", owner, false, ""]);
     }
 
-    const res = await db
-      .collection("Collection")
-      .create([
-        collection_address,
-        await db.collection("User").record(owner)?.collection.id,
-        symbol,
-        logo,
-        image,
-        symbol,
-        description,
-        db.collection("User").record(owner),
-        owner,
-        chain_Image,
-        false,
-      ]);
+    // const res = await db
+    //   .collection("Collection")
+    //   .create([
+    //     collection_address,
+    //     await db.collection("User").record(owner)?.collection.id,
+    //     symbol,
+    //     logo,
+    //     image,
+    //     symbol,
+    //     description,
+    //     db.collection("User").record(owner),
+    //     owner,
+    //     chain_Image,
+    //     false,
+    //   ]);
 
     // router.reload();
   }
@@ -548,28 +549,28 @@ const Profile = ({
     }
 
     const db = await polybase();
-    const res = await db
-      .collection("NFT")
-      .create([
-        `${collection_address}/${id}`,
-        collection_address,
-        id,
-        chainIdMain?.toString(),
-        token_uri,
-        db.collection("User").record(signer_address),
-        db.collection("Collection").record(collection_address),
-        JSON.stringify(properties),
-        name,
-        image,
-        description,
-        false,
-        signer_address,
-        chain_block,
-        chain_Image,
-        chain_symbol,
-        token_uri,
-        "0",
-      ]);
+    // const res = await db
+    //   .collection("NFT")
+    //   .create([
+    //     `${collection_address}/${id}`,
+    //     collection_address,
+    //     id,
+    //     chainIdMain?.toString(),
+    //     token_uri,
+    //     db.collection("User").record(signer_address),
+    //     db.collection("Collection").record(collection_address),
+    //     JSON.stringify(properties),
+    //     name,
+    //     image,
+    //     description,
+    //     false,
+    //     signer_address,
+    //     chain_block,
+    //     chain_Image,
+    //     chain_symbol,
+    //     token_uri,
+    //     "0",
+    //   ]);
     // router.reload();
   }
 
@@ -984,9 +985,8 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${
-                myWalletActive && "active relative"
-              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${myWalletActive &&
+                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="wallet-tab"
               data-bs-toggle="tab"
               data-bs-target="#wallet"
@@ -1020,9 +1020,8 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${
-                myNFTsActive && "active relative"
-              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${myNFTsActive &&
+                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="created-tab"
               data-bs-toggle="tab"
               data-bs-target="#created"
@@ -1057,9 +1056,9 @@ const Profile = ({
             }}
           >
             <button
-              className={`nav-link ${
-                !myNFTsActive && !myWalletActive && "active relative"
-              } flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
+              className={`nav-link ${!myNFTsActive &&
+                !myWalletActive &&
+                "active relative"} flex items-center whitespace-nowrap py-3 px-6 text-jacarta-400 hover:text-jacarta-700 dark:hover:text-white`}
               id="collections-tab"
               data-bs-toggle="tab"
               data-bs-target="#collections"
