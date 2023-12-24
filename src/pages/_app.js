@@ -1629,7 +1629,7 @@ export default function App({ Component, pageProps }) {
   }, [defaultCollectionAddress]);
 
   return (
-    <PolybaseProvider polybase={polybase()}>
+    <PolybaseProvider polybase={polybase}>
       <Navbar
         search_nft={search_nft}
         connectToWallet={connectToWallet}
