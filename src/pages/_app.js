@@ -17,6 +17,7 @@ import { IntmaxWalletSigner } from "webmax";
 import axios from "axios";
 import * as PushAPI from "@pushprotocol/restapi";
 import { Polybase } from "@polybase/client";
+import { PolybaseProvider } from "@polybase/react";
 import { ethPersonalSign } from "@polybase/eth";
 import { create } from "@connext/sdk";
 import { useRouter } from "next/router";
@@ -241,7 +242,10 @@ export default function App({ Component, pageProps }) {
 
   const del_nft = async () => {
     const db = await polybase();
-    const res = await db.collection("NFT").record("nftid").call("del");
+    const res = await db
+      .collection("NFT")
+      .record("nftid")
+      .call("del");
   };
 
   // delete collection polybase chain_method
@@ -1499,7 +1503,7 @@ export default function App({ Component, pageProps }) {
 
   // polybase db connect
   const polybase = async () => {
-    const db = new Polybase({
+    const db = await new Polybase({
       baseURL: "https://testnet.polybase.xyz/v0",
       defaultNamespace: process.env.NEXT_PUBLIC_POLYBASE_NAMESPACE,
       signer: async (data) => {
@@ -1516,7 +1520,10 @@ export default function App({ Component, pageProps }) {
   const getUserData = async (user_address) => {
     try {
       const db = await polybase();
-      const res = await db.collection("User").record(user_address).get();
+      const res = await db
+        .collection("User")
+        .record(user_address)
+        .get();
       const {
         bio,
         coverImage,
@@ -1622,7 +1629,7 @@ export default function App({ Component, pageProps }) {
   }, [defaultCollectionAddress]);
 
   return (
-    <>
+    <PolybaseProvider polybase={polybase()}>
       <Navbar
         search_nft={search_nft}
         connectToWallet={connectToWallet}
@@ -1688,6 +1695,6 @@ export default function App({ Component, pageProps }) {
       />
       <ToastContainer />
       <Footer />
-    </>
+    </PolybaseProvider>
   );
 }
