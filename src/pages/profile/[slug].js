@@ -433,7 +433,7 @@ const Profile = ({
       );
 
       const fetchData = await fetch(e?.token_uri, { mode: "no-cors" });
-      console.log(fetchData, "fetchData");
+      console.log(await fetchData.json(), "fetchData");
 
       // if (nftStatus.collectionStatus) {
       //   await listCollection(
