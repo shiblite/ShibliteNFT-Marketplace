@@ -436,7 +436,7 @@ const Profile = ({
 
       console.log(await fetchData, "fetchData");
 
-      let { name, description, image, properties } = await fetchData;
+      // let { name, description, image, properties } = await fetchData;
       image?.replace(
         /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
         "https://ipfs.io/ipfs/"
