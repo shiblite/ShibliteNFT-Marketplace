@@ -436,7 +436,7 @@ const Profile = ({
 
       console.log(await fetchData, "fetchData");
 
-      // let { name, description, image, properties } = await fetchData;
+      let { name, description, image, properties } = await fetchData?.data;
       image?.replace(
         /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
         "https://ipfs.io/ipfs/"
@@ -459,10 +459,10 @@ const Profile = ({
           e?.token_id,
           e?.token_uri,
           toChecksumAddress(e?.token_address),
-          p?.properties || p?.attributes,
-          p?.name,
-          p?.image,
-          p?.description
+          properties || p?.attributes,
+          name,
+          image,
+          description
         );
       }
 
