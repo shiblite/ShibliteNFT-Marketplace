@@ -433,7 +433,8 @@ const Profile = ({
       );
 
       const fetchData = await fetch(e?.token_uri, { mode: "no-cors" });
-      console.log(await fetchData.json(), "fetchData");
+
+      console.log(await fetchData, "fetchData");
 
       let { name, description, image, properties } = await fetchData.json();
       image?.replace(
