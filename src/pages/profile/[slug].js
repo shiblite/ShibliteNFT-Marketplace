@@ -425,12 +425,15 @@ const Profile = ({
     // const newResults = [];
     for (const e of walletNFTs) {
       const p = JSON.parse(e?.metadata);
-      const address = toChecksumAddress(e.token_address);
+      const address = toChecksumAddress(e?.token_address);
 
       const nftStatus = await checkWalletNft(
         address,
         address + "/" + e.token_id
       );
+
+      const fetchData = await fetch(e?.token_uri, { mode: "no-cors" });
+      console.log(fetchData, "fetchData");
 
       // if (nftStatus.collectionStatus) {
       //   await listCollection(
