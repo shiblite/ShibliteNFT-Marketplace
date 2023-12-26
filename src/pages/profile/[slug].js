@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useRouter } from "next/router";
 import testNFT from "../../../public/test.jpg";
 import Image from "next/image";
