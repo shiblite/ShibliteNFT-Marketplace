@@ -560,7 +560,7 @@ const Profile = ({
         token_uri,
         db.collection("User").record(signer_address),
         db.collection("Collection").record(collection_address),
-        JSON.stringify(properties),
+        properties == null ? "" : JSON.stringify(properties),
         name,
         image,
         description,
