@@ -396,10 +396,10 @@ const Profile = ({
       let nftStatus,
         collectionStatus = false;
 
-      const checkCollection = await db
-        .collection("Collection")
-        .where("id", "==", collectionId)
-        .get();
+      // const checkCollection = await db
+      //   .collection("Collection")
+      //   .where("id", "==", collectionId)
+      //   .get();
 
       const checkNft = await db
         .collection("NFT")
@@ -410,9 +410,9 @@ const Profile = ({
         nftStatus = true;
       }
 
-      if (checkCollection.data.length === 0) {
-        collectionStatus = true;
-      }
+      // if (checkCollection.data.length === 0) {
+      //   collectionStatus = true;
+      // }
 
       return { nftStatus, collectionStatus };
     } catch (error) {
@@ -432,17 +432,17 @@ const Profile = ({
         address + "/" + e.token_id
       );
 
-      if (nftStatus.collectionStatus) {
-        await listCollection(
-          toChecksumAddress(e?.token_address),
-          p?.name,
-          p?.image,
-          p?.image,
-          e?.symbol,
-          p?.description,
-          toChecksumAddress(e?.owner_of)
-        );
-      }
+      // if (nftStatus.collectionStatus) {
+      //   await listCollection(
+      //     toChecksumAddress(e?.token_address),
+      //     p?.name,
+      //     p?.image,
+      //     p?.image,
+      //     e?.symbol,
+      //     p?.description,
+      //     toChecksumAddress(e?.owner_of)
+      //   );
+      // }
 
       if (nftStatus.nftStatus) {
         await listNft(
