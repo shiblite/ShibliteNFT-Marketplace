@@ -432,7 +432,7 @@ const Profile = ({
         address + "/" + e.token_id
       );
 
-      const fetchData = await axios.get(e?.token_uri, { mode: "cors" });
+      const fetchData = await axios.get(e?.token_uri);
 
       console.log(await fetchData, "fetchData");
 
