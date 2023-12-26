@@ -435,6 +435,12 @@ const Profile = ({
       const fetchData = await fetch(e?.token_uri, { mode: "no-cors" });
       console.log(await fetchData.json(), "fetchData");
 
+      let { name, description, image, properties } = await fetchData.json();
+      image?.replace(
+        /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
+        "https://ipfs.io/ipfs/"
+      );
+
       // if (nftStatus.collectionStatus) {
       //   await listCollection(
       //     toChecksumAddress(e?.token_address),
