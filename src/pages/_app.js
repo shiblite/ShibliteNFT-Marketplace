@@ -1509,7 +1509,7 @@ export default function App({ Component, pageProps }) {
       baseURL: "https://testnet.polybase.xyz/v0",
       // defaultNamespace: process.env.NEXT_PUBLIC_POLYBASE_NAMESPACE,
       defaultNamespace:
-        "pk/0x786916133b80b10cae1d9e9986449a518da4b0aadae9f6d8fda9b8bf24b39dd113d19c55df8299eb055f2e34dbefa822cb81ab69711da6ee93c7d5264e782245/shiblite-test",
+        "pk/0x786916133b80b10cae1d9e9986449a518da4b0aadae9f6d8fda9b8bf24b39dd113d19c55df8299eb055f2e34dbefa822cb81ab69711da6ee93c7d5264e782245/shiblie-2",
       signer: async (data) => {
         return {
           h: "eth-personal-sign",
