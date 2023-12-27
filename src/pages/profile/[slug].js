@@ -314,7 +314,7 @@ const Profile = ({
         tokenAddresses: ["0xF2d68898557cCb2Cf4C10c3Ef2B034b2a69DAD00"],
         address: signer_address,
       });
-      setFDAIXBALANCE(ethers.utils.formatEther(response.raw[0].balance));
+      // setFDAIXBALANCE(ethers.utils.formatEther(response.raw[0].balance));
     } catch (error) {
       console.log(error);
     }
@@ -426,6 +426,7 @@ const Profile = ({
     for (const e of walletNFTs) {
       const p = JSON.parse(e?.metadata);
       const address = toChecksumAddress(e?.token_address);
+      const minter = toChecksumAddress(e?.minter_address);
 
       const nftStatus = await checkWalletNft(
         address,
@@ -462,7 +463,8 @@ const Profile = ({
           properties || p?.attributes,
           name,
           image,
-          description
+          description,
+          minter
         );
       }
 
@@ -538,7 +540,8 @@ const Profile = ({
     properties,
     name,
     image,
-    description
+    description,
+    minter
   ) {
     let chain_Image;
     let chain_symbol;
@@ -570,14 +573,14 @@ const Profile = ({
         id,
         chainIdMain?.toString(),
         token_uri,
-        user,
-        collect,
+        minter,
+        collection_address,
         properties == null ? "" : JSON.stringify(properties),
         name,
         image,
         description,
         false,
-        signer_address,
+        minter,
         chain_block,
         chain_Image,
         chain_symbol,

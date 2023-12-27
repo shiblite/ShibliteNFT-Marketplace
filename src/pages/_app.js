@@ -505,7 +505,7 @@ export default function App({ Component, pageProps }) {
         obj.listingPrice = e.data.listingPrice
           ? ethers.utils.formatEther(e.data.listingPrice)
           : "";
-        obj.owner = e.data.owner.id;
+        obj.owner = e.data.owner;
         obj.chain_block = e.data.chain_block;
         obj.chain_image = e.data.chain_image;
         obj.chain_symbol = e.data.chain_symbol;
@@ -938,8 +938,8 @@ export default function App({ Component, pageProps }) {
                 tokenId.toString(),
                 network.chainId.toString(),
                 tokenURI,
-                db.collection("User").record(signer_address),
-                db.collection("Collection").record(_tokenURI.collection),
+                signer_address,
+                collection_address,
                 properties[0].type == "" ? "" : JSON.stringify(properties),
                 name,
                 ipfsURL,
