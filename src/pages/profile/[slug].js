@@ -585,8 +585,8 @@ const Profile = ({
     //     .create([minter, "", "", "", "", "", minter, false, ""]);
     // }
 
-    let user = await db.collection("User").record(minter);
-    let collect = await db.collection("Collection").record(collection_address);
+    // let user = await db.collection("User").record(minter);
+    // let collect = await db.collection("Collection").record(collection_address);
     const res = await db
       .collection("NFT")
       .create([
@@ -595,8 +595,8 @@ const Profile = ({
         id,
         chainIdMain?.toString(),
         token_uri,
-        user,
-        collect,
+        minter,
+        collection_address,
         properties == null ? "" : JSON.stringify(properties),
         name,
         image,

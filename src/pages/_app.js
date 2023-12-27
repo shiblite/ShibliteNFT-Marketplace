@@ -507,7 +507,7 @@ export default function App({ Component, pageProps }) {
         obj.listingPrice = e.data.listingPrice
           ? ethers.utils.formatEther(e.data.listingPrice)
           : "";
-        obj.owner = e.data.owner.id;
+        obj.owner = e.data.owner;
         obj.chain_block = e.data.chain_block;
         obj.chain_image = e.data.chain_image;
         obj.chain_symbol = e.data.chain_symbol;
@@ -940,8 +940,8 @@ export default function App({ Component, pageProps }) {
                 tokenId.toString(),
                 network.chainId.toString(),
                 tokenURI,
-                db.collection("User").record(signer_address),
-                db.collection("Collection").record(_tokenURI.collection),
+                signer_address,
+                _tokenURI.collection,
                 properties[0].type == "" ? "" : JSON.stringify(properties),
                 name,
                 ipfsURL,
@@ -1064,7 +1064,7 @@ export default function App({ Component, pageProps }) {
         .get();
       const ownerInfo = await db
         .collection("User")
-        .record(res.data.owner.id)
+        .record(res.data.owner)
         .get();
       obj.nft_properties = res.data.attributes
         ? JSON.parse(res.data.attributes)
@@ -1086,7 +1086,7 @@ export default function App({ Component, pageProps }) {
       obj.listingPrice = res.data.listingPrice
         ? ethers.utils.formatEther(res.data.listingPrice)
         : "";
-      obj.nft_owner = res.data.owner.id;
+      obj.nft_owner = res.data.owner;
       obj.chain_block = res.data.chain_block;
       obj.chain_image = res.data.chain_image;
       obj.chain_symbol = res.data.chain_symbol;
