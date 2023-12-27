@@ -563,6 +563,17 @@ const Profile = ({
     }
 
     const db = await polybase();
+
+    const checkUser = await db
+      .collection("User")
+      .where("id", "==", minter)
+      .get();
+    if (checkUser.data.length === 0) {
+      const res = await db
+        .collection("User")
+        .create([minter, "", "", "", "", "", minter, false, ""]);
+    }
+
     let user = await db.collection("User").record(minter);
     let collect = await db.collection("Collection").record(collection_address);
     const res = await db
