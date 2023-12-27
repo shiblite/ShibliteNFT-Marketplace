@@ -15,12 +15,13 @@ collection NFT {
     chain_image: string;
     chain_symbol: string;
     ipfsURL: string;
-    nftCollection: Collection;
     properties: string;
     ownerWallet: string;
     owner: User;
     seller: User;
     marketAddress: User;
+    nftCollection: Collection;
+    @index(nftCollection);
 
     constructor(
         id: string,
