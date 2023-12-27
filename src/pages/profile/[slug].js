@@ -444,7 +444,16 @@ const Profile = ({
         address + "/" + e.token_id
       );
 
-      const fetchData = await axios.get(e?.token_uri);
+      const customHeaders = {
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Origin": "https://www.shiblitenft.club",
+      };
+
+      const fetchData = await axios.get(e?.token_uri, {
+        headers: customHeaders,
+      });
 
       console.log(await fetchData, "fetchData");
 
@@ -774,9 +783,7 @@ const Profile = ({
                         {calculateFlowRate(userStreamData?.flowRate) > 0 && (
                           <button
                             type="button"
-                            onClick={() => (
-                              getBalanceMoralis(), setMembershipVisible(true)
-                            )}
+                            onClick={() => setMembershipVisible(true)}
                             className="rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
                           >
                             View Membership
@@ -785,9 +792,7 @@ const Profile = ({
                         {calculateFlowRate(userStreamData?.flowRate) <= 0 && (
                           <button
                             type="button"
-                            onClick={() => (
-                              getBalanceMoralis(), setMembershipVisible(true)
-                            )}
+                            onClick={() => setMembershipVisible(true)}
                             className="rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
                           >
                             Become Member
