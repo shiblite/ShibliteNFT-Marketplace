@@ -573,7 +573,7 @@ const Profile = ({
       chain_block = "https://mumbai.polygonscan.com/";
     }
 
-    // const db = await polybase();
+    const db = await polybase();
 
     // const checkUser = await db
     //   .collection("User")
