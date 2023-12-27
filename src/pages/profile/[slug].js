@@ -1014,7 +1014,7 @@ const Profile = ({
           role="tablist"
         >
           {/* my nfts button  */}
-          <li
+          {/* <li
             className="nav-item"
             role="presentation"
             onClick={() => {
@@ -1047,7 +1047,7 @@ const Profile = ({
                 In Wallet ({walletNFTs?.length ? walletNFTs?.length : "0"})
               </span>
             </button>
-          </li>
+          </li> */}
 
           <li
             className="nav-item"
