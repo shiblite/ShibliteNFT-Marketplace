@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }) {
   // connect wallet metamask
   const connectToWallet = async () => {
     const db = await polybase();
-    // del_nft();
+    del_nft();
     // delete_user();
     // delete_collection();
     // create_Marketplace_user();
@@ -244,7 +244,8 @@ export default function App({ Component, pageProps }) {
     const db = await polybase();
     const res = await db
       .collection("NFT")
-      .record("nftid")
+      .where("collectionId", "==", "0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd")
+      // .record("nftid")
       .call("del");
   };
 
