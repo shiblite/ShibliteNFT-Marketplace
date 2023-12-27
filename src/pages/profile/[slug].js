@@ -560,6 +560,8 @@ const Profile = ({
     }
 
     const db = await polybase();
+    let user = await db.collection("User").record(signer_address);
+    let collect = await db.collection("Collection").record(collection_address);
     const res = await db
       .collection("NFT")
       .create([
@@ -568,8 +570,8 @@ const Profile = ({
         id,
         chainIdMain?.toString(),
         token_uri,
-        db.collection("User").record(signer_address),
-        db.collection("Collection").record(collection_address),
+        user,
+        collect,
         properties == null ? "" : JSON.stringify(properties),
         name,
         image,
