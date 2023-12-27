@@ -422,11 +422,22 @@ const Profile = ({
 
   async function getStatus() {
     set_loading(true);
+    const db = await polybase();
     // const newResults = [];
     for (const e of walletNFTs) {
       const p = JSON.parse(e?.metadata);
       const address = toChecksumAddress(e?.token_address);
       const minter = toChecksumAddress(e?.minter_address);
+
+      const checkUser = await db
+        .collection("User")
+        .where("id", "==", minter)
+        .get();
+      if (checkUser.data.length === 0) {
+        const res = await db
+          .collection("User")
+          .create([minter, "", "", "", "", "", minter, false, ""]);
+      }
 
       const nftStatus = await checkWalletNft(
         address,
@@ -562,17 +573,17 @@ const Profile = ({
       chain_block = "https://mumbai.polygonscan.com/";
     }
 
-    const db = await polybase();
+    // const db = await polybase();
 
-    const checkUser = await db
-      .collection("User")
-      .where("id", "==", minter)
-      .get();
-    if (checkUser.data.length === 0) {
-      const res = await db
-        .collection("User")
-        .create([minter, "", "", "", "", "", minter, false, ""]);
-    }
+    // const checkUser = await db
+    //   .collection("User")
+    //   .where("id", "==", minter)
+    //   .get();
+    // if (checkUser.data.length === 0) {
+    //   const res = await db
+    //     .collection("User")
+    //     .create([minter, "", "", "", "", "", minter, false, ""]);
+    // }
 
     let user = await db.collection("User").record(minter);
     let collect = await db.collection("Collection").record(collection_address);
