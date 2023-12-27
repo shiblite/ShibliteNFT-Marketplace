@@ -505,7 +505,7 @@ export default function App({ Component, pageProps }) {
         obj.listingPrice = e.data.listingPrice
           ? ethers.utils.formatEther(e.data.listingPrice)
           : "";
-        obj.owner = e.data.owner;
+        obj.owner = e.data.owner.id;
         obj.chain_block = e.data.chain_block;
         obj.chain_image = e.data.chain_image;
         obj.chain_symbol = e.data.chain_symbol;
@@ -938,8 +938,8 @@ export default function App({ Component, pageProps }) {
                 tokenId.toString(),
                 network.chainId.toString(),
                 tokenURI,
-                signer_address,
-                collection_address,
+                db.collection("User").record(signer_address),
+                db.collection("Collection").record(_tokenURI.collection),
                 properties[0].type == "" ? "" : JSON.stringify(properties),
                 name,
                 ipfsURL,
@@ -1506,8 +1506,7 @@ export default function App({ Component, pageProps }) {
     const db = await new Polybase({
       baseURL: "https://testnet.polybase.xyz/v0",
       // defaultNamespace: process.env.NEXT_PUBLIC_POLYBASE_NAMESPACE,
-      defaultNamespace:
-        "pk/0x786916133b80b10cae1d9e9986449a518da4b0aadae9f6d8fda9b8bf24b39dd113d19c55df8299eb055f2e34dbefa822cb81ab69711da6ee93c7d5264e782245/shiblite-test",
+      defaultNamespace: "pk/0x786916133b80b10cae1d9e9986449a518da4b0aadae9f6d8fda9b8bf24b39dd113d19c55df8299eb055f2e34dbefa822cb81ab69711da6ee93c7d5264e782245/shiblite-test"
       signer: async (data) => {
         return {
           h: "eth-personal-sign",
