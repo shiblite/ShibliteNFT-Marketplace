@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }) {
   // connect wallet metamask
   const connectToWallet = async () => {
     const db = await polybase();
-    del_nft();
+    // del_nft();
     // delete_user();
     // delete_collection();
     // create_Marketplace_user();
