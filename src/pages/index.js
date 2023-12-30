@@ -144,7 +144,7 @@ export default function Home({ all_collections, nfts, artists }) {
                   <div>
                     <div className="block overflow-hidden rounded-2.5xl bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
                       <div className="relative">
-                        <Link href="/nft/0x870696c21EA3f46bb9Acf84F71973246E4EFa239/0">
+                        <Link href="/nft/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793/0">
                           <img
                             src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/0019e7baef9a4f984a202993ccc2e6d9.jpg"
                             alt="item 1"
@@ -157,7 +157,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="p-6">
                         <div className="flex">
                           <Link
-                            href="/collection/0x870696c21EA3f46bb9Acf84F71973246E4EFa239"
+                            href="/collection/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793"
                             className="shrink-0"
                           >
                             <img
@@ -175,7 +175,7 @@ export default function Home({ all_collections, nfts, artists }) {
                               </span>
                             </a>
                             <Link
-                              href="/collection/0x870696c21EA3f46bb9Acf84F71973246E4EFa239"
+                              href="/collection/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793"
                               className="text-2xs text-accent"
                             >
                               By ShibLite Marketplace Collection
@@ -191,7 +191,7 @@ export default function Home({ all_collections, nfts, artists }) {
                   <div>
                     <div className="block overflow-hidden rounded-2.5xl bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
                       <div className="relative">
-                        <Link href="/nft/0x870696c21EA3f46bb9Acf84F71973246E4EFa239/2">
+                        <Link href="/nft/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793/2">
                           <img
                             src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/00311e1f5906d31ef4819ae37992b691.jpg"
                             alt="item 1"
@@ -204,7 +204,7 @@ export default function Home({ all_collections, nfts, artists }) {
                       <div className="p-6">
                         <div className="flex">
                           <Link
-                            href="/collection/0x870696c21EA3f46bb9Acf84F71973246E4EFa239"
+                            href="/collection/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793"
                             className="shrink-0"
                           >
                             <img
@@ -237,7 +237,7 @@ export default function Home({ all_collections, nfts, artists }) {
                     <div>
                       <div className="block overflow-hidden rounded-2.5xl bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
                         <div className="relative">
-                          <Link href="/nft/0x870696c21EA3f46bb9Acf84F71973246E4EFa239/3">
+                          <Link href="/nft/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793/3">
                             <img
                               src="https://ipfs.io/ipfs/QmZkunE7G7JtKjTeK8kksvegM66mZnBe9Rb7J6ShaNVuDj/003f927f1f9d0a7d2df635c98b95dd3c.jpg"
                               alt="item 1"
@@ -250,7 +250,7 @@ export default function Home({ all_collections, nfts, artists }) {
                         <div className="p-6">
                           <div className="flex">
                             <Link
-                              href="/collection/0x870696c21EA3f46bb9Acf84F71973246E4EFa239"
+                              href="/collection/0xA489aB9Bb841c772192f8fF9Ca7f74be5A42C793"
                               className="shrink-0"
                             >
                               <img
