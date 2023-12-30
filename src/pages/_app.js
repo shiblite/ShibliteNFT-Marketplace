@@ -140,20 +140,21 @@ export default function App({ Component, pageProps }) {
         setSymbol("BNB");
         setBlockchain("BSC Mainnet");
         setBlockURL("https://bscscan.com/");
-      } else if (chainId == 80001) {
-        // matic
-        setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
-        setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
-        setMarketplaceCollection("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
-        setCollectionFactoryAddress(
-          "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
-        );
-        setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
-        setChainImg(polygonLogo);
-        setSymbol("MATIC");
-        setBlockchain("Polygon Mumbai");
-        setBlockURL("https://mumbai.polygonscan.com/");
       }
+      // else if (chainId == 80001) {
+      //   // matic
+      //   setCollectionAddress("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
+      //   setMarketplaceAddress("0xcF5CB7c9ae635524f691AdeC6743d835cC2d4908");
+      //   setMarketplaceCollection("0xcB6BD973E79Ff196B50F9c32076E6c2e145a46cd");
+      //   setCollectionFactoryAddress(
+      //     "0x2c8Db32cDf0Ec95A1194Fe2842A4168a69ed556f"
+      //   );
+      //   setStakingContract("0xbEb37A34CAa2cC6b0641EaeC8D08326fc3Ad5F40");
+      //   setChainImg(polygonLogo);
+      //   setSymbol("MATIC");
+      //   setBlockchain("Polygon Mumbai");
+      //   setBlockURL("https://mumbai.polygonscan.com/");
+      // }
       // create_marketplace_acc();
       await setChainIdMain(chainId);
     } else {
