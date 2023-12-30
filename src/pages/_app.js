@@ -14,6 +14,7 @@ import CollectionFactory from "../../artifacts/contracts/CollectionFactory.sol/C
 import uma_verification from "../../artifacts/contracts/UMAVerification.sol/UMAVerify.json";
 import UMA_factory_contract from "../../artifacts/contracts/UMAFactory.sol/UMAFactory.json";
 import { IntmaxWalletSigner } from "webmax";
+import Moralis from "moralis";
 import axios from "axios";
 import * as PushAPI from "@pushprotocol/restapi";
 import { Polybase } from "@polybase/client";
@@ -38,7 +39,7 @@ export default function App({ Component, pageProps }) {
   const [provider, set_provider] = useState();
   const [chainIdMain, setChainIdMain] = useState();
   const [signer_address, set_signer_address] = useState("");
-  onst[(walletNFTs, setWalletNft)] = useState([]);
+  const[(walletNFTs, setWalletNft)] = useState([]);
   const [signer_bal, set_signer_bal] = useState(0);
   const [format_signer_bal, set_format_signer_bal] = useState(0);
   const [nfts, set_nfts] = useState([]);
