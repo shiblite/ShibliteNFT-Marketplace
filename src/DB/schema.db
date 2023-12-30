@@ -17,11 +17,10 @@ collection NFT {
     ipfsURL: string;
     properties: string;
     ownerWallet: string;
-    owner: User;
-    seller: User;
-    marketAddress: User;
-    nftCollection: Collection;
-    @index(nftCollection);
+    owner: string;
+    // seller: User;
+    // marketAddress: User;
+    nftCollection: string;
 
     constructor(
         id: string,
@@ -29,8 +28,8 @@ collection NFT {
         tokenId: string,
         chainId: string,
         tokenURI: string,
-        user: User,
-        nftCollection: Collection,
+        user: string,
+        nftCollection: string,
         properties: string,
         name: string,
         image: string,
@@ -61,8 +60,8 @@ collection NFT {
         this.chain_symbol = chain_symbol;
         this.ipfsURL = ipfsURL;
         this.listingPrice = listingPrice;
-        this.marketAddress = {collectionId: "", id: ""};
-        this.seller = {collectionId: "", id: ""};
+        // this.marketAddress = {collectionId: "", id: ""};
+        // this.seller = {collectionId: "", id: ""};
         this.isStaked = false;
     }
 
