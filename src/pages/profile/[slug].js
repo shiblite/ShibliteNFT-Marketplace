@@ -297,46 +297,46 @@ const Profile = ({
   };
 
   // using moralis for balances
-  const initiateMoralis = async () => {
-    try {
-      await Moralis.start({
-        apiKey: process.env.NEXT_PUBLIC_MORALIS_API,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const initiateMoralis = async () => {
+  //   try {
+  //     await Moralis.start({
+  //       apiKey: process.env.NEXT_PUBLIC_MORALIS_API,
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const getBalanceMoralis = async () => {
-    try {
-      const response = await Moralis.EvmApi.token.getWalletTokenBalances({
-        chain: chainIdMain,
-        tokenAddresses: ["0xF2d68898557cCb2Cf4C10c3Ef2B034b2a69DAD00"],
-        address: signer_address,
-      });
-      // setFDAIXBALANCE(ethers.utils.formatEther(response.raw[0].balance));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getBalanceMoralis = async () => {
+  //   try {
+  //     const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+  //       chain: chainIdMain,
+  //       tokenAddresses: ["0xF2d68898557cCb2Cf4C10c3Ef2B034b2a69DAD00"],
+  //       address: signer_address,
+  //     });
+  //     // setFDAIXBALANCE(ethers.utils.formatEther(response.raw[0].balance));
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const runApp = async () => {
-    try {
-      set_loading(true);
-      // const chainID = EvmChain.ETHEREUM;
-      const response = await Moralis.EvmApi.nft.getContractNFTs({
-        chain: chainIdMain,
-        address: marketplace_collection,
-      });
-      setWalletNft(
-        response?.jsonResponse?.result && response.jsonResponse.result
-      );
-      set_loading(false);
-      console.log(response?.jsonResponse?.result, "response.nft");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const runApp = async () => {
+  //   try {
+  //     set_loading(true);
+  //     // const chainID = EvmChain.ETHEREUM;
+  //     const response = await Moralis.EvmApi.nft.getContractNFTs({
+  //       chain: chainIdMain,
+  //       address: marketplace_collection,
+  //     });
+  //     setWalletNft(
+  //       response?.jsonResponse?.result && response.jsonResponse.result
+  //     );
+  //     set_loading(false);
+  //     console.log(response?.jsonResponse?.result, "response.nft");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const [loading, set_loading] = useState(false);
   const [membershipVisible, setMembershipVisible] = useState(false);
@@ -387,112 +387,112 @@ const Profile = ({
     set_my_collections(res);
   };
 
-  async function checkWalletNft(collectionId, nftId) {
-    try {
-      // console.log(typeof collectionId);
-      // set_loading(true);
-      const db = await polybase();
+  // async function checkWalletNft(collectionId, nftId) {
+  //   try {
+  //     // console.log(typeof collectionId);
+  //     // set_loading(true);
+  //     const db = await polybase();
 
-      let nftStatus,
-        collectionStatus = false;
+  //     let nftStatus,
+  //       collectionStatus = false;
 
-      // const checkCollection = await db
-      //   .collection("Collection")
-      //   .where("id", "==", collectionId)
-      //   .get();
+  //     // const checkCollection = await db
+  //     //   .collection("Collection")
+  //     //   .where("id", "==", collectionId)
+  //     //   .get();
 
-      const checkNft = await db
-        .collection("NFT")
-        .where("id", "==", nftId)
-        .get();
+  //     const checkNft = await db
+  //       .collection("NFT")
+  //       .where("id", "==", nftId)
+  //       .get();
 
-      if (checkNft.data.length === 0) {
-        nftStatus = true;
-      }
+  //     if (checkNft.data.length === 0) {
+  //       nftStatus = true;
+  //     }
 
-      // if (checkCollection.data.length === 0) {
-      //   collectionStatus = true;
-      // }
+  //     // if (checkCollection.data.length === 0) {
+  //     //   collectionStatus = true;
+  //     // }
 
-      return { nftStatus, collectionStatus };
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //     return { nftStatus, collectionStatus };
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  async function getStatus() {
-    set_loading(true);
-    const db = await polybase();
-    // const newResults = [];
-    for (const e of walletNFTs) {
-      const p = JSON.parse(e?.metadata);
-      const address = toChecksumAddress(e?.token_address);
-      const minter = toChecksumAddress(e?.minter_address);
+  // async function getStatus() {
+  //   set_loading(true);
+  //   const db = await polybase();
+  //   // const newResults = [];
+  //   for (const e of walletNFTs) {
+  //     const p = JSON.parse(e?.metadata);
+  //     const address = toChecksumAddress(e?.token_address);
+  //     const minter = toChecksumAddress(e?.minter_address);
 
-      const checkUser = await db
-        .collection("User")
-        .where("id", "==", minter)
-        .get();
-      if (checkUser.data.length === 0) {
-        const res = await db
-          .collection("User")
-          .create([minter, "", "", "", "", "", minter, false, ""]);
-      }
+  //     const checkUser = await db
+  //       .collection("User")
+  //       .where("id", "==", minter)
+  //       .get();
+  //     if (checkUser.data.length === 0) {
+  //       const res = await db
+  //         .collection("User")
+  //         .create([minter, "", "", "", "", "", minter, false, ""]);
+  //     }
 
-      const nftStatus = await checkWalletNft(
-        address,
-        address + "/" + e.token_id
-      );
+  //     const nftStatus = await checkWalletNft(
+  //       address,
+  //       address + "/" + e.token_id
+  //     );
 
-      const customHeaders = {
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Methods": "*",
-        "Access-Control-Allow-Origin": "https://www.shiblitenft.club",
-      };
+  //     const customHeaders = {
+  //       "Access-Control-Allow-Credentials": "true",
+  //       "Access-Control-Allow-Headers": "*",
+  //       "Access-Control-Allow-Methods": "*",
+  //       "Access-Control-Allow-Origin": "https://www.shiblitenft.club",
+  //     };
 
-      const fetchData = await axios.get(e?.token_uri, {
-        headers: customHeaders,
-      });
+  //     const fetchData = await axios.get(e?.token_uri, {
+  //       headers: customHeaders,
+  //     });
 
-      console.log(await fetchData, "fetchData");
+  //     console.log(await fetchData, "fetchData");
 
-      let { name, description, image, properties } = await fetchData?.data;
-      image = image?.replace(
-        /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
-        "https://ipfs.io/ipfs/"
-      );
+  //     let { name, description, image, properties } = await fetchData?.data;
+  //     image = image?.replace(
+  //       /^(ipfs:\/\/|https:\/\/ipfs\.moralis\.io:2053\/ipfs\/)/,
+  //       "https://ipfs.io/ipfs/"
+  //     );
 
-      // if (nftStatus.collectionStatus) {
-      //   await listCollection(
-      //     toChecksumAddress(e?.token_address),
-      //     p?.name,
-      //     p?.image,
-      //     p?.image,
-      //     e?.symbol,
-      //     p?.description,
-      //     toChecksumAddress(e?.owner_of)
-      //   );
-      // }
+  //     // if (nftStatus.collectionStatus) {
+  //     //   await listCollection(
+  //     //     toChecksumAddress(e?.token_address),
+  //     //     p?.name,
+  //     //     p?.image,
+  //     //     p?.image,
+  //     //     e?.symbol,
+  //     //     p?.description,
+  //     //     toChecksumAddress(e?.owner_of)
+  //     //   );
+  //     // }
 
-      if (nftStatus.nftStatus) {
-        await listNft(
-          e?.token_id,
-          e?.token_uri,
-          toChecksumAddress(e?.token_address),
-          properties || p?.attributes,
-          name,
-          image,
-          description,
-          minter
-        );
-      }
+  //     if (nftStatus.nftStatus) {
+  //       await listNft(
+  //         e?.token_id,
+  //         e?.token_uri,
+  //         toChecksumAddress(e?.token_address),
+  //         properties || p?.attributes,
+  //         name,
+  //         image,
+  //         description,
+  //         minter
+  //       );
+  //     }
 
-      // newResults.push(nftStatus);
-    }
-    // setStatusArray(newResults);
-    set_loading(false);
-  }
+  //     // newResults.push(nftStatus);
+  //   }
+  //   // setStatusArray(newResults);
+  //   set_loading(false);
+  // }
 
   async function listCollection(
     collection_address,
