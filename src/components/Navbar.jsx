@@ -925,7 +925,7 @@ const Navbar = ({
                     {/* network drop down  */}
                     {showNetworkPopup && (
                       <div className="flex flex-col justify-center w-[200px] absolute top-[24px] right-0 mt-7 shadow-xl bg-white z-10 text-sm shadow-4xl rounded-b-lg cursor-pointer">
-                        {chainIdMain != 1 && (
+                        {/* {chainIdMain != 1 && (
                           <div
                             className="flex flex-row justify-center pt-4 pb-2 hover:bg-slate-100"
                             onClick={() => switchEthereumChain()}
@@ -940,7 +940,7 @@ const Navbar = ({
                               Ethereum
                             </p>
                           </div>
-                        )}
+                        )} */}
 
                         {chainIdMain != 56 && (
                           <div
