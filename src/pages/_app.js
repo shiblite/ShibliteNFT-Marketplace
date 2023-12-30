@@ -1615,7 +1615,7 @@ export default function App({ Component, pageProps }) {
 
   const runApp = async () => {
     try {
-      set_loading(true);
+      // set_loading(true);
       // const chainID = EvmChain.ETHEREUM;
       const response = await Moralis.EvmApi.nft.getContractNFTs({
         chain: chainIdMain,
@@ -1627,7 +1627,7 @@ export default function App({ Component, pageProps }) {
       set_loading(false);
       console.log(response?.jsonResponse?.result, "response.nft");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -1665,7 +1665,7 @@ export default function App({ Component, pageProps }) {
   }
 
   async function getStatus() {
-    set_loading(true);
+    // set_loading(true);
     const db = await polybase();
     // const newResults = [];
     for (const e of walletNFTs) {
@@ -1735,7 +1735,7 @@ export default function App({ Component, pageProps }) {
       // newResults.push(nftStatus);
     }
     // setStatusArray(newResults);
-    set_loading(false);
+    // set_loading(false);
   }
 
   useEffect(() => {
